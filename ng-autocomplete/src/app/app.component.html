@@ -1,9 +1,9 @@
 <input placeholder="Search movies..." [formControl]="control" [ngAutoComplete]="autoComplete">
 <app-autocomplete #autoComplete="ngAutoComplete">
   <ng-template ngAutoCompleteContent>
-    <ng-container *ngIf="(options | autocompleteFilter: control.value) as content">
-      <app-option *ngFor="let option of content" [value]="option.label">
-        {{option.label}}
+    <ng-container *ngIf="(movies | autocompleteFilter: control.value) as content">
+      <app-option *ngFor="let option of content" [value]="option.title">
+        {{option.title}}
       </app-option>
       <app-option class="no-content" *ngIf="!content.length">No content...</app-option>
     </ng-container>

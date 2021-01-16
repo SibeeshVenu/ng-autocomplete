@@ -9,9 +9,12 @@ import { FormControl } from '@angular/forms';
 export class AppComponent {
   title = 'ng-autocomplete';
   control = new FormControl();
-  options = [
-    { id: 1, label: 'One' },
-    { id: 2, label: 'Two' },
-    { id: 3, label: 'Three' }
+  movies = [
+    { id: 1, title: 'Avengers' },
+    { id: 2, title: 'X Men' },
+    { id: 3, title: 'Captain America' },
+    { id: 3, title: 'Fast and Furious' },
+    { id: 3, title: 'Hulk' },
+    { id: 3, title: 'Iron Man' }
   ];
 }

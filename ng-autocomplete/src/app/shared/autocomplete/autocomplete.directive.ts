@@ -52,7 +52,7 @@ export class NgAutoDirective implements OnInit {
     openResultComponent() {
         this.overlayRef = this.overlay.create({
             width: this.origin.offsetWidth,
-            maxHeight: 40 * 3,
+            maxHeight: 50 * 5,
             backdropClass: '',
             scrollStrategy: this.overlay.scrollStrategies.reposition(),
             positionStrategy: this.overlayPosition()
