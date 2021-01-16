@@ -8,7 +8,7 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 
 @Directive({
-    selector: '[ngAutoComplete], ngAutoComplete'
+    selector: '[ngAutoComplete]'
 })
 export class NgAutoDirective implements OnInit {
     @Input() ngAutoComplete: AutocompleteComponent;
@@ -30,10 +30,11 @@ export class NgAutoDirective implements OnInit {
     }
 
     private overlayPosition() {
-        return this.overlay.position().flexibleConnectedTo(this.origin)
+        return this.overlay.position()
+            .flexibleConnectedTo(this.origin)
             .withPositions([
                 new ConnectionPositionPair(
-                    { originX: 'start', originY: 'top' },
+                    { originX: 'start', originY: 'bottom' },
                     { overlayX: 'start', overlayY: 'top' }),
                 new ConnectionPositionPair(
                     { originX: 'start', originY: 'top' },
@@ -51,7 +52,7 @@ export class NgAutoDirective implements OnInit {
     openResultComponent() {
         this.overlayRef = this.overlay.create({
             width: this.origin.offsetWidth,
-            maxHeight: 50 * 5,
+            maxHeight: 40 * 3,
             backdropClass: '',
             scrollStrategy: this.overlay.scrollStrategies.reposition(),
             positionStrategy: this.overlayPosition()
