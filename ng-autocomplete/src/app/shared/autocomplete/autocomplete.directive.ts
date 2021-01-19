@@ -46,7 +46,6 @@ export class NgAutoDirective implements OnInit {
 
     private close() {
         this.overlayRef.detach();
-        this.overlayRef = null;
     }
 
     openResultComponent() {
